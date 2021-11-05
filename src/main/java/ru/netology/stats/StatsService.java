@@ -9,4 +9,8 @@ public class StatsService {
         }
         return sum;
     }
+
+    public int averageCompanySales(int[] sales){
+        return sumSales(sales)/sales.length;
+    }
 }

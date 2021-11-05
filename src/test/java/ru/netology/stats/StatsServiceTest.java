@@ -17,4 +17,16 @@ class StatsServiceTest {
 
         assertEquals(expected, actual);
     }
+
+    @Test
+    void shouldaverageCompanySales() {
+        StatsService service = new StatsService();
+
+        int[] enterpriseSales = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
+        int expected = 15;
+
+        int actual = service.averageCompanySales(enterpriseSales);
+
+        assertEquals(expected, actual);
+    }
 }
