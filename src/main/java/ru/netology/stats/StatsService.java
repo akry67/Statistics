@@ -2,15 +2,15 @@ package ru.netology.stats;
 
 public class StatsService {
 
-    public int sumSales(int[] sales){
+    public int sumSales(long[] sales){
         int sum = 0;
-        for (int sale : sales){
+        for (long sale : sales){
             sum += sale;
         }
         return sum;
     }
 
-    public int averageCompanySales(int[] sales){
+    public long averageCompanySales(long[] sales){
         return sumSales(sales)/sales.length;
     }
 
@@ -41,11 +41,12 @@ public class StatsService {
     }
 
     //Кол-во месяцев, в которых продажи были ниже среднего (см. п.2)
-    public int monthsMinAverageCompanySales (int[] sales){
+    public int monthsMinAverageCompanySales (long[] sales){
         int counter = 0;
         int numberMonthMinAvr =0;
-        for (int sale : sales) {
-            if (sale < sumSales(sales)/sales.length){
+        int averageSale = sumSales(sales)/sales.length;
+        for (long sale : sales) {
+            if (sale < averageSale){
                 numberMonthMinAvr = counter ++;
             }
         }
@@ -53,11 +54,12 @@ public class StatsService {
     }
 
     //Кол-во месяцев, в которых продажи были выше среднего (см. п.2)
-    public int monthMaxAverageCompanySales (int[] sales){
+    public int monthMaxAverageCompanySales (long[] sales){
         int counter = 0;
         int numberMonthMaxAvr =0;
-        for (int sale : sales) {
-            if (sale > sumSales(sales)/sales.length){
+        int averageSale = sumSales(sales)/sales.length;
+        for (long sale : sales) {
+            if (sale > averageSale){
                 numberMonthMaxAvr = counter ++;
             }
         }
